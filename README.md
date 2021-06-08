@@ -41,9 +41,10 @@
        00:00:00.000000 IP (tos 0x0, ttl 63, id 29742, offset 0, flags [DF], proto ICMP (1), length 84)
           192.168.128.2 > 192.168.192.3: ICMP echo request, id 3135, seq 12, length 64
        00:00:00.000032 IP (tos 0x0, ttl 64, id 38186, offset 0, flags [none], proto ICMP (1), length 84)
-          192.168.192.3 > 192.168.128.2: ICMP echo reply, id 3135, seq 12, length 64
+          192.168.192.3 > 192.168.128.2: ICMP echo reply, id 3135, seq 12, length 64  
 
-      ansible-playbook ./ansible/playbooks/ospf_cost.yml
+
+      **ansible-playbook ./ansible/playbooks/ospf_cost.yml**
 
 Для возврата к исходному состоянию параметров стоимости маршрутов, выполнить playbook **"./ansible/playbooks/ospf_restore_cost.yml"**
 
