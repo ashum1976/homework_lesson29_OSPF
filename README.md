@@ -34,17 +34,20 @@
 ![Симетричный роутинг](Images/OSPF_cost_1000_sim.png)
 
 
-    Запуск tcpdump показывает, что запросы и ответы идут через один интерфейс, тогда как при ассиметричном роутинге, будут идти через разные.    
-      >[root@R2 vagrant]# tcpdump -nnvvvttt -i eth2 -p icmp
-      dropped privs to tcpdump
-      tcpdump: listening on eth2, link-type EN10MB (Ethernet), capture size 262144 bytes
-       00:00:00.000000 IP (tos 0x0, ttl 63, id 29742, offset 0, flags [DF], proto ICMP (1), length 84)
-          192.168.128.2 > 192.168.192.3: ICMP echo request, id 3135, seq 12, length 64
+    Запуск tcpdump показывает, что запросы и ответы идут через один интерфейс, тогда как при ассиметричном роутинге, будут идти через разные.
+
+  >[root@R2 vagrant]# tcpdump -nnvvvttt -i eth2 -p icmp
+      dropped privs to tcpdump  
+      tcpdump: listening on eth2, link-type EN10MB (Ethernet), capture size 262144 bytes  
+       00:00:00.000000 IP (tos 0x0, ttl 63, id 29742, offset 0, flags [DF], proto ICMP (1), length 84)  
+      192.168.128.2 > 192.168.192.3: ICMP echo request, id 3135, seq 12, length 64
        00:00:00.000032 IP (tos 0x0, ttl 64, id 38186, offset 0, flags [none], proto ICMP (1), length 84)
           192.168.192.3 > 192.168.128.2: ICMP echo reply, id 3135, seq 12, length 64  
 
 
-      **ansible-playbook ./ansible/playbooks/ospf_cost.yml**
+
+
+      ansible-playbook ./ansible/playbooks/ospf_cost.yml
 
 Для возврата к исходному состоянию параметров стоимости маршрутов, выполнить playbook **"./ansible/playbooks/ospf_restore_cost.yml"**
 
