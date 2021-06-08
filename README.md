@@ -17,9 +17,9 @@
 3. Для создания ассимитричного роутинга меняем стоимость маршрута на интерфейсах.
 
 
-Запуск отдельного playbook, для установки значений стоимости маршрута в ospf. Устанавливаем значение  "ip ospf cost 1000" в файле  ""/etc/frr/ospfd.conf" на роутерах R1 и R2 на интерфейсах eth2 (R1-eth2-192.168.160.3) (R2-eth2-192.168.192.3) .
+Запуск отдельного playbook, для установки значений стоимости маршрута в ospf. Устанавливаем значение  "ip ospf cost 1000" в файле  ""/etc/frr/ospfd.conf" на роутере R1  на интерфейсе eth2 (R1-eth2-192.168.160.3).
 
-![Ассиметричный роутинг](Images/OSPF_cost_1000.png)
+![Ассиметричный роутинг](Images/OSPF_cost_1000_assim.png)
 
       ansible-playbook ./ansible/playbooks/ospf_cost.yml  --limit R1_costs
 
@@ -28,7 +28,20 @@
       ansible-playbook ./ansible/playbooks/ospf_restore_cost.yml
 
 
-4. Изменим стоимость маршрута на двух интерфейсах, сделаем их одинаково дорогими. на роутерах R1 и R2 увеличим стоимость на одинаковое значение (1000), на интерфейсах eth2 (R1-eth2-192.168.160.3) (R2-eth2-192.168.192.3) .
+4. Изменим стоимость маршрута на двух интерфейсах, сделаем их одинаково дорогими. на роутерах R1 и R2 увеличим стоимость на одинаковое значение (1000), на интерфейсах eth2 (R1-eth2-192.168.160.3)  и eth1 (R2-eth1-192.168.160.2).
+
+
+![Симетричный роутинг](Images/OSPF_cost_1000_sim.png)
+
+
+    Запуск tcpdump показывает, что запросы и ответы идут через один интерфейс, тогда как при ассиметричном роутинге, будут идти через разные.    
+      >[root@R2 vagrant]# tcpdump -nnvvvttt -i eth2 -p icmp
+      dropped privs to tcpdump
+      tcpdump: listening on eth2, link-type EN10MB (Ethernet), capture size 262144 bytes
+       00:00:00.000000 IP (tos 0x0, ttl 63, id 29742, offset 0, flags [DF], proto ICMP (1), length 84)
+          192.168.128.2 > 192.168.192.3: ICMP echo request, id 3135, seq 12, length 64
+       00:00:00.000032 IP (tos 0x0, ttl 64, id 38186, offset 0, flags [none], proto ICMP (1), length 84)
+          192.168.192.3 > 192.168.128.2: ICMP echo reply, id 3135, seq 12, length 64
 
       ansible-playbook ./ansible/playbooks/ospf_cost.yml
 
