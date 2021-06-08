@@ -1,0 +1,36 @@
+---
+
+- name: Установка стоимости маршрута R1 and R2
+  hosts:
+    - routers_cost
+  become: True
+  gather_facts: True
+  tasks:
+    - name: Change line in file R1 eth2 if
+      lineinfile:
+        dest: /etc/frr/ospfd.conf
+        regexp: '!ip ospf cost 1000'
+        line: 'ip ospf cost 1000'
+        state:  present
+      notify:
+        - restart frr
+  handlers:
+    - name: restart frr
+      systemd:
+        name:
+          frr
+        state:
+          restarted
+# - name: Установка стоимости маршрута R2
+#   hosts:  R2_cost
+#   become: True
+#   gather_facts: True
+#   tasks:
+#     - name: Change line in file R2 eth1 if
+#       lineinfile:
+#         dest: /etc/frr/ospfd.conf
+#         regexp: '! ip ospf cost 255'
+#         line: 'ip ospf cost 255'
+#         state:  present
+#       tags:
+#         R2_cost

@@ -1,0 +1,29 @@
+all:
+  vars:
+    ansible_user: 'vagrant'
+    ansible_ssh_pass: 'vagrant'
+    ansible_host: 127.0.0.1
+
+
+
+#Группа ospf_net (parent), включающая в себя группы routers и servers (children)
+ospf_net:
+  children:
+    routers:
+    #servers:
+routers:
+  hosts:
+    R1:
+    R2:
+    R3:
+    # r4:
+    # r5:
+    # r6:
+routers_cost:
+  hosts:
+    R1_costs:
+       ansible_port: 2222
+    R2_costs:
+       ansible_port: 2200
+    # R3:
+    #   ansible_port:

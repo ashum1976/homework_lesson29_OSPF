@@ -1,0 +1,6 @@
+---
+# handlers file for roles/ospf
+- name: restart frr
+  systemd:
+      name: frr
+      state: restarted

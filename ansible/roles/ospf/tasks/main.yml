@@ -1,0 +1,92 @@
+---
+# tasks file for roles/ospf
+- name: Настройка параметров sysctl
+  script: "rsysctl.sh"
+  tags: "{{ all_routers }}"
+
+  # Работа с пакетами, установка, удаление, обновление
+  ## Обновить все пакеты
+  # - name: "Upgrade all packages"
+  #   yum:
+  #     name: '*'
+  #     state: latest
+  #   tags:
+        # - "{{ all_routers }}"
+
+# Установить пакеты, список в переменной "{{ yum_install_all }}"
+# Общие пакеты для всех серверов
+- name: "Установить пакеты "
+  dnf:
+    name: "{{ yum_install_all }}"
+    state: present
+    disable_gpg_check:  yes
+  tags:
+    - "{{ all_routers }}"
+
+#Удалить пакеты
+## Общие пакеты для всех серверов
+- name: "Удалить пакеты "
+  dnf:
+    name: "{{ yum_remove }}"
+    state: absent
+  tags:
+    - "{{ all_routers }}"
+
+#SELinux сборка и  установка разрешающего модуля, через скрипт
+- name: Copy SELinux файл для создания разрешающего модуля
+  copy:
+    src:  my_watchfrr.te
+    dest:  /root/my_watchfrr.te
+    mode: 0600
+  tags:
+    - "{{ all_routers }}"
+
+- name:  Сборка и установка модуля для SELinux
+  script: selinux_modul.sh
+  tags: "{{ all_routers }}"
+
+
+#Управление сервисами
+## Включить в автозагрузку и запустить необходимые приложения
+- name: Enable and started frr - ospf router
+  systemd:
+    name: frr
+    state: started
+    enabled: yes
+  tags:
+    - "{{ all_routers }}"
+
+#Работа с шаблонами файлов, создание установка в системе. Копирование файлов конфигурации
+- name:  Copy config files "daemons"
+  copy:
+    src:  frr.conf
+    dest:  /etc/frr/daemons
+    owner:  frr
+    group:  frr
+    mode: 0644
+  tags:
+    - "{{ all_routers }}"
+  notify:
+    - restart frr
+
+- name: Copy frr conf files ospfd.conf
+  template:
+    src: "{{ ansible_hostname }}.j2"
+    # src:  R1.j2
+    dest: /etc/frr/ospfd.conf
+    mode: 0644
+  tags:
+    - "{{ all_routers }}"
+  notify:
+    - restart frr
+
+
+- name:  Copy frr conf files zebra.conf
+  template:
+    src:  "zebra_{{ ansible_hostname }}.conf.j2"
+    dest:  /etc/frr/zebra.conf
+    mode: 0644
+  tags:
+    - "{{ all_routers }}"
+  notify:
+    - restart frr

@@ -1,0 +1,1502 @@
+2021-06-03 15:39:38,720 p=4169568 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--r1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |--r2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |--r3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |--r4
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |--r5
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |--r6
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-03 15:40:03,569 p=4169728 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--r1
+  |  |  |--r2
+  |  |  |--r3
+  |  |  |--r4
+  |  |  |--r5
+  |  |  |--r6
+  |--@ungrouped:
+2021-06-03 15:40:17,637 p=4169872 u=andrey n=ansible | ERROR! Pattern must be valid group name when using --graph
+2021-06-03 15:40:27,142 p=4169930 u=andrey n=ansible | @ospf_net:
+  |--@routers:
+  |  |--r1
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |--r2
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |--r3
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |--r4
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |--r5
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |--r6
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+2021-06-04 14:21:00,974 p=486790 u=andrey n=ansible | ERROR! the playbook: routers.yml could not be found
+2021-06-04 14:22:03,336 p=487279 u=andrey n=ansible | ERROR! the playbook: –list-tasks could not be found
+2021-06-04 14:22:11,127 p=487329 u=andrey n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/main.yml': line 55, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  template:
+    src: {{ all_routers }}.j2
+                          ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2021-06-04 14:22:47,130 p=487543 u=andrey n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/main.yml': line 55, column 29, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  template:
+    src: "{{ all_routers }}"".j2
+                            ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2021-06-04 14:23:01,102 p=487653 u=andrey n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/main.yml': line 55, column 29, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  template:
+    src: "{{ all_routers }}".j2
+                            ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2021-06-04 14:23:24,020 p=487802 u=andrey n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/handlers/main.yml': line 4, column 12, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- name: restart frr
+    systemd:
+           ^ here
+
+2021-06-04 14:24:43,744 p=488381 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:24:43,745 p=488381 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:24:43,925 p=488381 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:26:49,049 p=489472 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:26:49,049 p=489472 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:26:49,072 p=489472 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:28:35,489 p=490113 u=andrey n=ansible | @ospf_net:
+  |--@routers:
+  |  |--r1
+  |  |  |--{all_routers = ['r1', 'r2', 'r3']}
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |  |--r2
+  |  |  |--{all_routers = ['r1', 'r2', 'r3']}
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |  |--r3
+  |  |  |--{all_routers = ['r1', 'r2', 'r3']}
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |--{all_routers = ['r1', 'r2', 'r3']}
+  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |--{yum_remove = ['firewalld']}
+2021-06-04 14:28:49,097 p=490222 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--r1
+  |  |  |  |--{all_routers = ['r1', 'r2', 'r3']}
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--r2
+  |  |  |  |--{all_routers = ['r1', 'r2', 'r3']}
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--r3
+  |  |  |  |--{all_routers = ['r1', 'r2', 'r3']}
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{all_routers = ['r1', 'r2', 'r3']}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-04 14:29:13,994 p=490352 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:29:13,995 p=490352 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:29:14,118 p=490352 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:30:22,403 p=490784 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:30:22,404 p=490784 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:30:22,426 p=490784 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:34:16,755 p=492198 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:34:16,756 p=492198 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:34:16,782 p=492198 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:34:49,503 p=492406 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:34:49,503 p=492406 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:34:49,528 p=492406 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:36:20,297 p=492975 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:36:20,297 p=492975 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:36:20,323 p=492975 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:38:13,037 p=493663 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:38:13,037 p=493663 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:38:13,058 p=493663 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:38:42,564 p=493851 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:38:42,565 p=493851 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:38:42,566 p=493851 u=andrey n=ansible |     tasks:
+      ospf : Настройка параметров sysctl	TAGS: [r1, r2, r3]
+
+2021-06-04 14:39:57,697 p=494313 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:39:57,697 p=494313 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:39:57,719 p=494313 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:40:26,960 p=494493 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:40:26,960 p=494493 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:40:26,983 p=494493 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:41:02,093 p=494723 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:41:02,093 p=494723 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:41:02,119 p=494723 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:43:05,808 p=495438 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 14:43:05,809 p=495438 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 14:43:05,871 p=495438 u=andrey n=ansible | ERROR! 'all_routers' is undefined
+2021-06-04 14:46:47,128 p=497376 u=andrey n=ansible | ERROR! tags must be specified as a list
+
+The error appears to be in '/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/main.yml': line 35, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tags:
+    group: "{{ all_routers }}"
+    ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2021-06-04 15:24:23,351 p=511217 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--r1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--r2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--r3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-04 15:26:02,824 p=511990 u=andrey n=ansible | ERROR! None (HTTP Code: 400, Message: Bad Request)
+2021-06-04 15:26:20,665 p=512079 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 15:26:20,665 p=512079 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 15:26:20,821 p=512079 u=andrey n=ansible |     tasks:
+      ospf : Настройка параметров sysctl	TAGS: [r1, r2, r3]
+      ospf : Установить пакеты 	TAGS: [r1, r2, r3]
+
+2021-06-04 15:27:20,885 p=512666 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--r1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--r2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--r3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-04 15:38:00,637 p=517065 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 15:38:00,637 p=517065 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 15:38:00,810 p=517065 u=andrey n=ansible |     tasks:
+      ospf : Настройка параметров sysctl	TAGS: [r1, r2, r3]
+      ospf : Установить пакеты 	TAGS: [r1, r2, r3]
+
+2021-06-04 15:49:59,874 p=522180 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 15:51:16,561 p=522733 u=andrey n=ansible | PLAY [Установка параметров сетевых интерфейсов] **********************************************************************************************************************************************************************************************
+2021-06-04 15:51:16,792 p=522733 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-04 15:51:21,387 p=522733 u=andrey n=ansible | fatal: [r3]: UNREACHABLE! => {"changed": false, "msg": "Invalid/incorrect password: Warning: Permanently added '127.0.0.1' (ECDSA) to the list of known hosts.\r\nPermission denied, please try again.", "unreachable": true}
+2021-06-04 15:51:21,394 p=522733 u=andrey n=ansible | fatal: [r1]: UNREACHABLE! => {"changed": false, "msg": "Invalid/incorrect password: Warning: Permanently added '127.0.0.1' (ECDSA) to the list of known hosts.\r\nPermission denied, please try again.", "unreachable": true}
+2021-06-04 15:51:21,399 p=522733 u=andrey n=ansible | fatal: [r2]: UNREACHABLE! => {"changed": false, "msg": "Invalid/incorrect password: Permission denied, please try again.", "unreachable": true}
+2021-06-04 15:51:21,400 p=522733 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-04 15:51:21,400 p=522733 u=andrey n=ansible | r1                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-04 15:51:21,400 p=522733 u=andrey n=ansible | r2                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-04 15:51:21,401 p=522733 u=andrey n=ansible | r3                         : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-04 15:55:52,379 p=524513 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-04 15:55:52,380 p=524513 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-04 15:55:52,555 p=524513 u=andrey n=ansible |     tasks:
+      ospf : Настройка параметров sysctl	TAGS: [r1, r2, r3]
+      ospf : Установить пакеты 	TAGS: [r1, r2, r3]
+      ospf : Удалить пакеты 	TAGS: []
+      Enable and started frr - ospf router	TAGS: [r1, r2, r3]
+      ospf : Nginx conf files	TAGS: [r1, r2, r3]
+
+2021-06-05 23:55:52,917 p=14240 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--r1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_vars = ['eth1', 'eth2']}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_r1_1': '192.168.128.3'}, {'ip_r1_2': '192.168.160.2'}, {'ip_r2_1': '192.168.192.2'}, {'ip_r2_2': '192.168.160.3'}, {'ip_r3_1': '192.168.128.2'}, {'ip_r3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = [{'net1': '192.168.128.0'}, {'net2': '192.168.160.0'}, {'net3': '192.168.192.0'}, {'netmask': 29}, {'router_id_r1': '10.10.10.1'}, {'router_id_r1': '10.10.10.2'}, {'router_id_r1': '10.10.10.3'}]}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--r2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_vars = ['eth1', 'eth2']}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_r1_1': '192.168.128.3'}, {'ip_r1_2': '192.168.160.2'}, {'ip_r2_1': '192.168.192.2'}, {'ip_r2_2': '192.168.160.3'}, {'ip_r3_1': '192.168.128.2'}, {'ip_r3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = [{'net1': '192.168.128.0'}, {'net2': '192.168.160.0'}, {'net3': '192.168.192.0'}, {'netmask': 29}, {'router_id_r1': '10.10.10.1'}, {'router_id_r1': '10.10.10.2'}, {'router_id_r1': '10.10.10.3'}]}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--r3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_vars = ['eth1', 'eth2']}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_r1_1': '192.168.128.3'}, {'ip_r1_2': '192.168.160.2'}, {'ip_r2_1': '192.168.192.2'}, {'ip_r2_2': '192.168.160.3'}, {'ip_r3_1': '192.168.128.2'}, {'ip_r3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = [{'net1': '192.168.128.0'}, {'net2': '192.168.160.0'}, {'net3': '192.168.192.0'}, {'netmask': 29}, {'router_id_r1': '10.10.10.1'}, {'router_id_r1': '10.10.10.2'}, {'router_id_r1': '10.10.10.3'}]}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_vars = ['eth1', 'eth2']}
+  |  |--{ospf_ip_neigh = [{'ip_r1_1': '192.168.128.3'}, {'ip_r1_2': '192.168.160.2'}, {'ip_r2_1': '192.168.192.2'}, {'ip_r2_2': '192.168.160.3'}, {'ip_r3_1': '192.168.128.2'}, {'ip_r3_2': '192.168.192.3'}]}
+  |  |--{ospf_net = [{'net1': '192.168.128.0'}, {'net2': '192.168.160.0'}, {'net3': '192.168.192.0'}, {'netmask': 29}, {'router_id_r1': '10.10.10.1'}, {'router_id_r1': '10.10.10.2'}, {'router_id_r1': '10.10.10.3'}]}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-05 23:58:21,950 p=14341 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-05 23:58:21,951 p=14341 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-05 23:58:22,101 p=14341 u=andrey n=ansible |     tasks:
+      ospf : Настройка параметров sysctl	TAGS: [r1, r2, r3]
+      ospf : Сборка и установка модуля для SELinux	TAGS: [r1, r2, r3]
+      ospf : Установить пакеты 	TAGS: [r1, r2, r3]
+      ospf : Удалить пакеты 	TAGS: []
+      Enable and started frr - ospf router	TAGS: [r1, r2, r3]
+      ospf : Nginx conf files	TAGS: [r1, r2, r3]
+
+2021-06-06 00:08:40,105 p=14708 u=andrey n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/installs/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/main.yml': line 57, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#Работа с шаблонами файлов, создание установка в системы
+-name:  Copy config files daemon.conf
+^ here
+
+2021-06-06 00:09:02,007 p=14725 u=andrey n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/installs/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/main.yml': line 61, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    dst:  /etc/frr.conf
+tags:
+^ here
+
+2021-06-06 00:09:16,283 p=14743 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-06 00:09:16,283 p=14743 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-06 00:09:16,320 p=14743 u=andrey n=ansible |     tasks:
+      ospf : Настройка параметров sysctl	TAGS: [r1, r2, r3]
+      ospf : Сборка и установка модуля для SELinux	TAGS: [r1, r2, r3]
+      ospf : Установить пакеты 	TAGS: [r1, r2, r3]
+      ospf : Удалить пакеты 	TAGS: [r1, r2, r3]
+      Enable and started frr - ospf router	TAGS: [r1, r2, r3]
+      ospf : Copy config files daemon.conf	TAGS: [r1, r2, r3]
+      frr conf files ospfd.conf	TAGS: [r1, r2, r3]
+
+2021-06-06 00:17:06,283 p=16165 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-06 00:17:06,283 p=16165 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-06 00:17:06,323 p=16165 u=andrey n=ansible |     tasks:
+      ospf : Настройка параметров sysctl	TAGS: [r1, r2, r3]
+      ospf : Сборка и установка модуля для SELinux	TAGS: [r1, r2, r3]
+      ospf : Установить пакеты 	TAGS: [r1, r2, r3]
+      ospf : Удалить пакеты 	TAGS: [r1, r2, r3]
+      Enable and started frr - ospf router	TAGS: [r1, r2, r3]
+      ospf : Copy config files "daemon.conf"	TAGS: [r1, r2, r3]
+      Copy frr conf files ospfd.conf	TAGS: [r1, r2, r3]
+      ospf : Copy SELinux файл для создания разрешающего модуля	TAGS: [r1, r2, r3]
+
+2021-06-06 07:02:58,730 p=5870 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = [{'net1': '192.168.128.0'}, {'net2': '192.168.160.0'}, {'net3': '192.168.192.0'}, {'netmask': 29}, {'router_id_r1': '10.10.10.1'}, {'router_id_r1': '10.10.10.2'}, {'router_id_r1': '10.10.10.3'}]}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = [{'net1': '192.168.128.0'}, {'net2': '192.168.160.0'}, {'net3': '192.168.192.0'}, {'netmask': 29}, {'router_id_r1': '10.10.10.1'}, {'router_id_r1': '10.10.10.2'}, {'router_id_r1': '10.10.10.3'}]}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = [{'net1': '192.168.128.0'}, {'net2': '192.168.160.0'}, {'net3': '192.168.192.0'}, {'netmask': 29}, {'router_id_r1': '10.10.10.1'}, {'router_id_r1': '10.10.10.2'}, {'router_id_r1': '10.10.10.3'}]}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |--{ospf_net = [{'net1': '192.168.128.0'}, {'net2': '192.168.160.0'}, {'net3': '192.168.192.0'}, {'netmask': 29}, {'router_id_r1': '10.10.10.1'}, {'router_id_r1': '10.10.10.2'}, {'router_id_r1': '10.10.10.3'}]}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-06 07:08:08,324 p=6020 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0', 'router_ip': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'netmask': [29]}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0', 'router_ip': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'netmask': [29]}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0', 'router_ip': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'netmask': [29]}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0', 'router_ip': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'netmask': [29]}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-06 07:11:02,573 p=6198 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0', 'router_ip': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0', 'router_ip': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0', 'router_ip': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}, {'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}, {'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0', 'router_ip': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-06 22:52:42,229 p=8988 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R1_1': '192.168.128.3'}, {'ip_R1_2': '192.168.160.2'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R2_1': '192.168.192.2'}, {'ip_R2_2': '192.168.160.3'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = [{'ip_R3_1': '192.168.128.2'}, {'ip_R3_2': '192.168.192.3'}]}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-06 23:23:36,847 p=20236 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-07 00:45:15,326 p=40128 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'router_id': '10.10.100.1'}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'router_id': '10.10.100.2'}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'router_id': '10.10.100.3'}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29'}, 'R2': {'ip': '192.168.160.0/28'}, 'R3': {'ip': '192.168.192.0/29'}, 'netmask': 29}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 00:46:45,455 p=40186 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'router_id': '10.10.100.1'}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'router_id': '10.10.100.2'}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'router_id': '10.10.100.3'}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 00:47:09,080 p=40218 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask': 29}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 09:02:52,451 p=1960735 u=andrey n=ansible | playbook: ./ansible/playbooks/routers.yml
+2021-06-07 09:02:52,452 p=1960735 u=andrey n=ansible |   play #1 (ospf_net): Установка параметров сетевых интерфейсов	TAGS: []
+2021-06-07 09:02:52,608 p=1960735 u=andrey n=ansible |     tasks:
+      ospf : Настройка параметров sysctl	TAGS: [R1, R2, R3]
+      ospf : Установить пакеты 	TAGS: [R1, R2, R3]
+      ospf : Удалить пакеты 	TAGS: [R1, R2, R3]
+      ospf : Copy SELinux файл для создания разрешающего модуля	TAGS: [R1, R2, R3]
+      ospf : Сборка и установка модуля для SELinux	TAGS: [R1, R2, R3]
+      Enable and started frr - ospf router	TAGS: [R1, R2, R3]
+      ospf : Copy config files "daemons"	TAGS: [R1, R2, R3]
+      Copy frr conf files ospfd.conf	TAGS: [R1, R2, R3]
+      ospf : Copy frr conf files zebra.conf	TAGS: [R1, R2, R3]
+
+2021-06-07 09:15:01,376 p=1965498 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |--R2
+  |  |  |--R3
+  |--@ungrouped:
+2021-06-07 09:15:09,333 p=1965562 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = localhost}
+  |  |  |  |--{ansible_port = 2222}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = localhost}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = localhost}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}, 'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = localhost}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 09:25:58,397 p=2005962 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0/29', 'router_id': '10.10.100.1'}}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0/28', 'router_id': '10.10.100.2'}}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0/29', 'router_id': '10.10.100.3'}}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 15:44:44,783 p=2254214 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_port = 2222}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_port = 2200}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_port = None}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@routers_cost:
+  |  |--R1
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2222}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |  |--R2
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2200}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |  |--R3
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = None}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{ansible_host = 127.0.0.1}
+  |  |--{ansible_ssh_pass = vagrant}
+  |  |--{ansible_user = vagrant}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 16:34:07,602 p=2276057 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_port = 2222}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_port = 2200}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@routers_cost:
+  |  |--R1
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2222}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |  |--R2
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2200}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 16:36:57,292 p=2277155 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_port = 2222}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_port = 2200}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@routers_cost:
+  |  |--R1
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2222}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |  |--R2
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2200}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 16:37:18,522 p=2277273 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@routers_cost:
+  |  |--R1
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |  |--R2
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |--{yum_remove = ['firewalld']}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 16:38:37,557 p=2277758 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@routers_cost:
+  |  |--R1_costs
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2222}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |--R2_costs
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2200}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 16:42:00,084 p=2279113 u=andrey n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/main.yml': line 81, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+##  Выполняем задачу по изменению стоимости маршрута R1
+  - name: Copy frr conf files ospfd.conf
+  ^ here
+
+2021-06-07 16:42:41,850 p=2279398 u=andrey n=ansible | PLAY [Установка стоимости маршрутов] *********************************************************************************************************************************************************************************************************
+2021-06-07 16:42:42,246 p=2279398 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-07 16:42:42,889 p=2279398 u=andrey n=ansible | fatal: [R1_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:1tF+jqWSPgjfUv8X6DCt807/4wU4lREswns/oKM01D4.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:86\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-07 16:42:47,408 p=2279398 u=andrey n=ansible | ok: [R2_costs]
+2021-06-07 16:42:47,432 p=2279398 u=andrey n=ansible | TASK [Copy frr conf files ospfd.conf] ********************************************************************************************************************************************************************************************************
+2021-06-07 16:42:48,512 p=2279398 u=andrey n=ansible | fatal: [R2_costs]: FAILED! => {"changed": false, "msg": "Could not find or access 'R1_costs.j2\"'\nSearched in:\n\t/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/templates/R1_costs.j2\"\n\t/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/R1_costs.j2\"\n\t/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/templates/R1_costs.j2\"\n\t/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/roles/ospf/tasks/R1_costs.j2\"\n\t/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/playbooks/templates/R1_costs.j2\"\n\t/storage/Study/OTUS/lesson_29_OSPF/homework_lesson29_OSPF/ansible/playbooks/R1_costs.j2\" on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2021-06-07 16:42:48,514 p=2279398 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-07 16:42:48,514 p=2279398 u=andrey n=ansible | R1_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:42:48,514 p=2279398 u=andrey n=ansible | R2_costs                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:43:59,513 p=2279901 u=andrey n=ansible | PLAY [Установка стоимости маршрутов] *********************************************************************************************************************************************************************************************************
+2021-06-07 16:43:59,592 p=2279901 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-07 16:43:59,841 p=2279901 u=andrey n=ansible | fatal: [R1_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:1tF+jqWSPgjfUv8X6DCt807/4wU4lREswns/oKM01D4.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:86\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-07 16:44:03,598 p=2279901 u=andrey n=ansible | ok: [R2_costs]
+2021-06-07 16:44:03,610 p=2279901 u=andrey n=ansible | TASK [Copy frr conf files ospfd.conf] ********************************************************************************************************************************************************************************************************
+2021-06-07 16:44:04,738 p=2279901 u=andrey n=ansible | fatal: [R2_costs]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'ospf_net' is undefined"}
+2021-06-07 16:44:04,740 p=2279901 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-07 16:44:04,740 p=2279901 u=andrey n=ansible | R1_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:44:04,740 p=2279901 u=andrey n=ansible | R2_costs                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:46:24,153 p=2281163 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@routers_cost:
+  |  |--R1_costs
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2222}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |--R2_costs
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2200}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 16:47:56,820 p=2281996 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@routers_cost:
+  |  |--R1_costs
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2222}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |--R2_costs
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2200}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 16:49:23,867 p=2282656 u=andrey n=ansible | @all:
+  |--@ospf_net:
+  |  |--@routers:
+  |  |  |--R1
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R2
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |  |--R3
+  |  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |  |--{ansible_user = vagrant}
+  |  |  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |  |  |--{ospf_ip_neigh = {'ip_R3_1': '192.168.128.2', 'ip_R3_2': '192.168.192.3'}}
+  |  |  |  |--{ospf_net = {'R3': {'ip': '192.168.192.0', 'router_id': '10.10.100.3'}, 'R1': {'ip': '192.168.128.0'}}}
+  |  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |  |  |--{yum_remove = ['firewalld']}
+  |  |--{if_routers = [{'eth': 'eth0'}, {'eth': 'eth1'}]}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{yum_install_all = ['mc', 'iptables-services', 'kbd', 'epel-release', 'tcpdump', 'nano', 'frr', 'setools-console', 'setroubleshoot-server']}
+  |  |--{yum_remove = ['firewalld']}
+  |--@routers_cost:
+  |  |--R1_costs
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2222}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{ospf_ip_neigh = {'ip_R1_1': '192.168.128.3', 'ip_R1_2': '192.168.160.2'}}
+  |  |  |--{ospf_net = {'R1': {'ip': '192.168.128.0', 'router_id': '10.10.100.1'}, 'R2': {'ip': '192.168.160.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--R2_costs
+  |  |  |--{ansible_host = 127.0.0.1}
+  |  |  |--{ansible_port = 2200}
+  |  |  |--{ansible_ssh_pass = vagrant}
+  |  |  |--{ansible_user = vagrant}
+  |  |  |--{ospf_ip_neigh = {'ip_R2_1': '192.168.192.2', 'ip_R2_2': '192.168.160.3'}}
+  |  |  |--{ospf_net = {'R2': {'ip': '192.168.160.0', 'router_id': '10.10.100.2'}, 'R3': {'ip': '192.168.192.0'}}}
+  |  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |  |--{ospf_net_mask = {'netmask_8': 29, 'netmask_1': 32}}
+  |--@ungrouped:
+  |--{ansible_host = 127.0.0.1}
+  |--{ansible_ssh_pass = vagrant}
+  |--{ansible_user = vagrant}
+2021-06-07 16:51:08,047 p=2283297 u=andrey n=ansible | PLAY [Установка стоимости маршрутов] *********************************************************************************************************************************************************************************************************
+2021-06-07 16:51:08,301 p=2283297 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-07 16:51:08,647 p=2283297 u=andrey n=ansible | fatal: [R1_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:1tF+jqWSPgjfUv8X6DCt807/4wU4lREswns/oKM01D4.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:86\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-07 16:51:12,406 p=2283297 u=andrey n=ansible | ok: [R2_costs]
+2021-06-07 16:51:12,423 p=2283297 u=andrey n=ansible | TASK [Copy frr conf files ospfd.conf] ********************************************************************************************************************************************************************************************************
+2021-06-07 16:51:13,700 p=2283297 u=andrey n=ansible | fatal: [R2_costs]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'dict object' has no attribute 'R1'"}
+2021-06-07 16:51:13,710 p=2283297 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-07 16:51:13,710 p=2283297 u=andrey n=ansible | R1_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:51:13,710 p=2283297 u=andrey n=ansible | R2_costs                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:57:59,670 p=2285735 u=andrey n=ansible | PLAY [Установка стоимости маршрутов] *********************************************************************************************************************************************************************************************************
+2021-06-07 16:57:59,758 p=2285735 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-07 16:57:59,976 p=2285735 u=andrey n=ansible | fatal: [R1_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:1tF+jqWSPgjfUv8X6DCt807/4wU4lREswns/oKM01D4.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:86\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-07 16:58:03,790 p=2285735 u=andrey n=ansible | ok: [R2_costs]
+2021-06-07 16:58:03,806 p=2285735 u=andrey n=ansible | TASK [Copy frr conf files ospfd.conf] ********************************************************************************************************************************************************************************************************
+2021-06-07 16:58:10,582 p=2285735 u=andrey n=ansible | fatal: [R2_costs]: FAILED! => {"changed": false, "checksum": "be4b7ecd785f179fa5517abf96b543267251dbb1", "msg": "Destination directory /etc/frr does not exist"}
+2021-06-07 16:58:10,583 p=2285735 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-07 16:58:10,583 p=2285735 u=andrey n=ansible | R1_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:58:10,584 p=2285735 u=andrey n=ansible | R2_costs                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:59:23,587 p=2286318 u=andrey n=ansible | PLAY [Установка стоимости маршрутов] *********************************************************************************************************************************************************************************************************
+2021-06-07 16:59:23,663 p=2286318 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-07 16:59:23,857 p=2286318 u=andrey n=ansible | fatal: [R1_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:1tF+jqWSPgjfUv8X6DCt807/4wU4lREswns/oKM01D4.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:86\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-07 16:59:27,590 p=2286318 u=andrey n=ansible | ok: [R2_costs]
+2021-06-07 16:59:27,602 p=2286318 u=andrey n=ansible | TASK [Copy frr conf files ospfd.conf] ********************************************************************************************************************************************************************************************************
+2021-06-07 16:59:28,672 p=2286318 u=andrey n=ansible | fatal: [R2_costs]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'dict object' has no attribute 'R1'"}
+2021-06-07 16:59:28,677 p=2286318 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-07 16:59:28,678 p=2286318 u=andrey n=ansible | R1_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-07 16:59:28,678 p=2286318 u=andrey n=ansible | R2_costs                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-06-07 17:01:37,160 p=2287212 u=andrey n=ansible | PLAY [Установка стоимости маршрутов] *********************************************************************************************************************************************************************************************************
+2021-06-07 17:01:37,237 p=2287212 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-07 17:01:37,535 p=2287212 u=andrey n=ansible | fatal: [R1_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:1tF+jqWSPgjfUv8X6DCt807/4wU4lREswns/oKM01D4.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:86\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-07 17:01:41,542 p=2287212 u=andrey n=ansible | ok: [R2_costs]
+2021-06-07 17:01:41,578 p=2287212 u=andrey n=ansible | TASK [Copy frr conf files ospfd.conf] ********************************************************************************************************************************************************************************************************
+2021-06-07 17:01:42,668 p=2287212 u=andrey n=ansible | fatal: [R2_costs]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'dict object' has no attribute 'R1'"}
+2021-06-07 17:01:42,670 p=2287212 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-07 17:01:42,670 p=2287212 u=andrey n=ansible | R1_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-07 17:01:42,670 p=2287212 u=andrey n=ansible | R2_costs                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-06-08 13:31:48,871 p=64017 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] ************************************************************************************************************************************************************************************************
+2021-06-08 13:31:48,914 p=64017 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-08 13:31:49,118 p=64017 u=andrey n=ansible | fatal: [R2_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:qt1pRgRot6G2k+ALVsQuUyQtO6+o42CNm8uQF4nChwM.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:87\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-08 13:31:49,153 p=64017 u=andrey n=ansible | fatal: [R1_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:QYwoEn6BcDR4fV2+jADKP6Hf7UklAnZQWsUVycy1OnY.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:86\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-08 13:31:49,155 p=64017 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-08 13:31:49,155 p=64017 u=andrey n=ansible | R1_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 13:31:49,155 p=64017 u=andrey n=ansible | R2_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 13:33:48,274 p=65270 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] ************************************************************************************************************************************************************************************************
+2021-06-08 13:33:48,286 p=65270 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-08 13:33:48,453 p=65270 u=andrey n=ansible | fatal: [R2_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:qt1pRgRot6G2k+ALVsQuUyQtO6+o42CNm8uQF4nChwM.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:87\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-08 13:33:48,461 p=65270 u=andrey n=ansible | fatal: [R1_costs]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ECDSA key sent by the remote host is\nSHA256:QYwoEn6BcDR4fV2+jADKP6Hf7UklAnZQWsUVycy1OnY.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/andrey/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/andrey/.ssh/known_hosts:86\r\nPassword authentication is disabled to avoid man-in-the-middle attacks.\r\nKeyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.\r\nvagrant@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", "unreachable": true}
+2021-06-08 13:33:48,466 p=65270 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-08 13:33:48,466 p=65270 u=andrey n=ansible | R1_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 13:33:48,466 p=65270 u=andrey n=ansible | R2_costs                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 13:39:53,692 p=69568 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] ************************************************************************************************************************************************************************************************
+2021-06-08 13:39:53,705 p=69568 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-08 13:39:58,478 p=69568 u=andrey n=ansible | ok: [R2_costs]
+2021-06-08 13:39:58,599 p=69568 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 13:39:58,614 p=69568 u=andrey n=ansible | TASK [Change line in file R1 eth2 if] ********************************************************************************************************************************************************************************************************
+2021-06-08 13:40:01,424 p=69568 u=andrey n=ansible | ERROR! The requested handler 'restart frr' was not found in either the main handlers list nor in the listening handlers list
+2021-06-08 13:49:37,484 p=73646 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] ************************************************************************************************************************************************************************************************
+2021-06-08 13:49:37,497 p=73646 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-08 13:49:41,981 p=73646 u=andrey n=ansible | ok: [R2_costs]
+2021-06-08 13:49:42,047 p=73646 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 13:49:42,064 p=73646 u=andrey n=ansible | TASK [Change line in file R1 eth2 if] ********************************************************************************************************************************************************************************************************
+2021-06-08 13:49:44,973 p=73646 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 13:49:44,989 p=73646 u=andrey n=ansible | ok: [R2_costs]
+2021-06-08 13:49:44,992 p=73646 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-08 13:49:44,992 p=73646 u=andrey n=ansible | R1_costs                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 13:49:44,992 p=73646 u=andrey n=ansible | R2_costs                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 14:07:35,849 p=79772 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] ************************************************************************************************************************************************************************************************
+2021-06-08 14:07:35,863 p=79772 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-08 14:07:40,346 p=79772 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 14:07:40,372 p=79772 u=andrey n=ansible | ok: [R2_costs]
+2021-06-08 14:07:40,384 p=79772 u=andrey n=ansible | TASK [Change line in file R1 eth2 if] ********************************************************************************************************************************************************************************************************
+2021-06-08 14:07:43,190 p=79772 u=andrey n=ansible | ok: [R2_costs]
+2021-06-08 14:07:43,214 p=79772 u=andrey n=ansible | [0;31m--- before: /etc/frr/ospfd.conf (content)[0m
+[0;31m[0m[0;32m+++ after: /etc/frr/ospfd.conf (content)[0m
+[0;32m[0m[0;36m@@ -37,3 +37,4 @@[0m
+[0;36m[0m !
+ default-information originate always
+ line vty
+[0;32m+ip ospf cost 255[0m
+[0;32m[0m
+
+2021-06-08 14:07:43,215 p=79772 u=andrey n=ansible | changed: [R1_costs]
+2021-06-08 14:07:43,218 p=79772 u=andrey n=ansible | RUNNING HANDLER [restart frr] ****************************************************************************************************************************************************************************************************************
+2021-06-08 14:07:46,573 p=79772 u=andrey n=ansible | changed: [R1_costs]
+2021-06-08 14:07:46,575 p=79772 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-08 14:07:46,575 p=79772 u=andrey n=ansible | R1_costs                   : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 14:07:46,575 p=79772 u=andrey n=ansible | R2_costs                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 14:21:24,336 p=85354 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] ************************************************************************************************************************************************************************************************
+2021-06-08 14:21:24,350 p=85354 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-08 14:21:28,254 p=85354 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 14:21:28,269 p=85354 u=andrey n=ansible | TASK [Change line in file R1 eth2 if] ********************************************************************************************************************************************************************************************************
+2021-06-08 14:21:30,886 p=85354 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 14:21:30,889 p=85354 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-08 14:21:30,889 p=85354 u=andrey n=ansible | R1_costs                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 14:21:47,305 p=85528 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] ************************************************************************************************************************************************************************************************
+2021-06-08 14:21:47,317 p=85528 u=andrey n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+2021-06-08 14:21:51,091 p=85528 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 14:21:51,105 p=85528 u=andrey n=ansible | TASK [Change line in file R1 eth2 if] ********************************************************************************************************************************************************************************************************
+2021-06-08 14:21:53,645 p=85528 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 14:21:53,647 p=85528 u=andrey n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+2021-06-08 14:21:53,647 p=85528 u=andrey n=ansible | R1_costs                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 15:32:38,951 p=113107 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] *************************************************************************
+2021-06-08 15:32:38,951 p=113107 u=andrey n=ansible | skipping: no hosts matched
+2021-06-08 15:32:38,951 p=113107 u=andrey n=ansible | PLAY RECAP ************************************************************************************************************
+2021-06-08 15:32:55,356 p=113188 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] *************************************************************************
+2021-06-08 15:32:55,368 p=113188 u=andrey n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2021-06-08 15:32:57,959 p=113188 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 15:32:57,971 p=113188 u=andrey n=ansible | TASK [Change line in file R1 eth2 if] *********************************************************************************
+2021-06-08 15:32:59,578 p=113188 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 15:32:59,582 p=113188 u=andrey n=ansible | PLAY RECAP ************************************************************************************************************
+2021-06-08 15:32:59,582 p=113188 u=andrey n=ansible | R1_costs                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-06-08 15:33:45,272 p=113584 u=andrey n=ansible | PLAY [Установка стоимости маршрута R1 and R2] *************************************************************************
+2021-06-08 15:33:45,285 p=113584 u=andrey n=ansible | TASK [Gathering Facts] ************************************************************************************************
+2021-06-08 15:33:47,869 p=113584 u=andrey n=ansible | ok: [R1_costs]
+2021-06-08 15:33:47,881 p=113584 u=andrey n=ansible | TASK [Change line in file R1 eth2 if] *********************************************************************************
+2021-06-08 15:33:49,540 p=113584 u=andrey n=ansible | [0;31m--- before: /etc/frr/ospfd.conf (content)[0m
+[0;31m[0m[0;32m+++ after: /etc/frr/ospfd.conf (content)[0m
+[0;32m[0m[0;36m@@ -20,7 +20,7 @@[0m
+[0;36m[0m interface eth2
+ ip ospf mtu-ignore
+ ip ospf network point-to-point
+[0;31m-!ip ospf cost 255[0m
+[0;31m[0m[0;32m+ip ospf cost 255[0m
+[0;32m[0m ip ospf hello-interval 15
+ ip ospf dead-interval 60
+ !
+
+
+2021-06-08 15:33:49,541 p=113584 u=andrey n=ansible | changed: [R1_costs]
+2021-06-08 15:33:49,543 p=113584 u=andrey n=ansible | RUNNING HANDLER [restart frr] *****************************************************************************************
+2021-06-08 15:33:51,879 p=113584 u=andrey n=ansible | changed: [R1_costs]
+2021-06-08 15:33:51,883 p=113584 u=andrey n=ansible | PLAY RECAP ************************************************************************************************************
+2021-06-08 15:33:51,883 p=113584 u=andrey n=ansible | R1_costs                   : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

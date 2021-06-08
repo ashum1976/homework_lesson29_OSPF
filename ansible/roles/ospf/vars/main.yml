@@ -1,0 +1,6 @@
+---
+# vars file  for roles/ospf
+all_routers:
+      - R1
+      - R2
+      - R3

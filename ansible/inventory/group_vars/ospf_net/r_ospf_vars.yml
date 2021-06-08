@@ -1,0 +1,19 @@
+# Удалить не нужные пакеты
+yum_remove:
+      - firewalld
+
+# Установить необходимые пакеты
+yum_install_all:
+      - mc
+      - iptables-services
+      - kbd
+      - epel-release
+      - tcpdump
+      - nano
+      - frr
+      - setools-console
+      - setroubleshoot-server
+
+ospf_net_mask:
+      netmask_8:  29
+      netmask_1:  32

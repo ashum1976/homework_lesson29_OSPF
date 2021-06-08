@@ -1,0 +1,14 @@
+module my_watchfrr 1.0;
+
+require {
+        type init_tmp_t;
+        type init_t;
+        class file map;
+        class process setpgid;
+}
+
+#============= init_t ==============
+
+#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+allow init_t init_tmp_t:file map;
+allow init_t self:process setpgid;

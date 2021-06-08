@@ -1,0 +1,27 @@
+!
+hostname zebra
+password zebra
+enable password zebra
+!
+!ip route 0.0.0.0/0 blackhole
+!ip route 192.0.2.1/32 blackhole
+!ip route 192.0.2.2/32 blackhole
+!ip route 192.0.2.3/32 blackhole
+!ip route 192.0.2.4/32 blackhole
+!ip route 192.0.2.5/32 blackhole
+!
+interface eth1
+discription to_router1
+ip address {{ ospf_ip_neigh.ip_R3_1 }}
+
+interface eth2
+discription to_router2
+ip address {{ ospf_ip_neigh.ip_R3_2 }}
+!
+interface lo
+!ip address 10.10.100.3/29
+ip address {{ospf_net.R3.router_id }}/{{ ospf_net_mask.netmask_1}}
+!
+ip forwarding
+!ipv6 forwarding
+!
